@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor de Música</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Estilos adicionales para el reproductor de música */
+    #boton-reproduccion {
+      font-size: 2em; /* Tamaño grande para el botón de reproducción */
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Reproductor de Música</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="row mt-4">
+      <div class="col-md-8">
+        <!-- Reproductor -->
+        <div class="card">
+          <div class="card-header">
+            Reproductor
+          </div>
+          <div class="card-body">
+            <!-- Carátula de la canción -->
+            <img id="caratula-cancion" src="" alt="Carátula de la canción" class="img-fluid mb-3">
+            <!-- Botón de reproducción -->
+            <button class="btn btn-primary mx-auto d-block mb-3">
+              <i id="boton-reproduccion" class="fas fa-play" onclick="alternarReproduccion()"></i> 
+            </button>
+            <!-- Botones de control con íconos -->
+            <div class="d-flex justify-content-center">
+
+              <button class="btn btn-primary mr-2" onclick="pausar()">
+                <i class="fas fa-pause"></i> <!-- Ícono de pausa -->
+              </button>
+              <button class="btn btn-primary mr-2" onclick="adelantar()">
+                <i class="fas fa-forward"></i> <!-- Ícono de adelantar -->
+              </button>
+              <button class="btn btn-primary mr-2" onclick="retroceder()">
+                <i class="fas fa-backward"></i> <!-- Ícono de retroceder -->
+              </button>
+              <button class="btn btn-primary" onclick="mutear()">
+                <i class="fas fa-volume-mute"></i> <!-- Ícono de mute -->
+              </button>
+              <button class="btn btn-primary mr-2" onclick="agregar()">
+                <i class="fas fa-plus"></i> <!-- Ícono de favorito -->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <!-- Barra de búsqueda -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Buscar canción" id="buscar-cancion">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="buscarCancion()">Buscar</button>
+          </div>
+        </div>
+        <!-- Lista de favoritos -->
+        <div class="card mt-4">
+          <div class="card-header">
+            Lista de favoritos
+          </div>
+          <div class="card-body" id="lista-favoritos">
+            <!-- Aquí se mostrará la lista de favoritos -->
+          </div>
+        </div>
+        <!-- Lista de reproducción -->
+        <div class="card mt-4">
+          <div class="card-header">
+            Lista de Reproducción
+          </div>
+          <div class="card-body" id="lista-reproduccion">
+            <!-- Aquí se mostrará la lista de reproducción -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS y jQuery (Requerido para Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Archivo JavaScript personalizado -->
+  <script src="../src/reproductor.js"></script>
+</body>
+</html>
